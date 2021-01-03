@@ -6,7 +6,7 @@ Aishi comes with the following commands and respective help commands to assist i
 |---------------|:------------------------------------------------------------------------------:|:-----------------|
 |`~raid`        |sends the GBF raid tweet from specified twitter user                            |`~raid [user]`    |
 
-### Admin Commands
+### **Admin Commands**
 |Admin Command  |Description                                                                     |Usages            |
 |---------------|:------------------------------------------------------------------------------:|:-----------------|
 |`~@makeroles`  |creates all roles for raids to be reacted when `~@gbfroles` is called           |`~@makeroles`     |
@@ -15,7 +15,7 @@ Aishi comes with the following commands and respective help commands to assist i
 |`~@gbfroles`   |lists the created roles for raids and allows server members to join by reactingd|`~@gbfroles`      |
 
 
-## League
+## **League**
 ### Commands
 |Command|Description            |Usages                |
 |-------|:---------------------:|:---------------------|
