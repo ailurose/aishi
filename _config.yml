@@ -1,16 +1,16 @@
 name: aishi
 title: null
 
-html { 
-  background: url(https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
+#html { 
+#  background: url(https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png) no-repeat center center fixed; 
+#  -webkit-background-size: cover;
+#  -moz-background-size: cover;
+#  -o-background-size: cover;
+#  background-size: cover;
+#}
   
-#defaults:
-#  -  scope: 
-#      path: ""
-#    values: 
-#     image: "https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png"
+defaults:
+  -  scope: 
+      path: ""
+    values: 
+     image: "https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png"
