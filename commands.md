@@ -4,7 +4,7 @@ Aishi comes with the following commands and respective help commands to assist i
 ### Commands
 
 |Command        |Description                                                                     |Usages            |
-|---------------|:------------------------------------------------------------------------------:|:-----------------|
+|---|:---:|:---|
 |`~raid`        |sends the GBF raid tweet from specified twitter user                            |`~raid [user]`    |
 
 ### **Admin Commands**
@@ -21,6 +21,6 @@ Aishi comes with the following commands and respective help commands to assist i
 ### Commands
 
 |Command|Description                                                    |Usages                 |
-|-------|:-------------------------------------------------------------:|:----------------------|
+|---|:---:|:---|
 |`~ammr`|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
 |`~aram`|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user] [region]`|
