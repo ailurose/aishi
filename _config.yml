@@ -1,8 +1,6 @@
 name: aishi
 title: null
 
-@import"{{ site.theme }}";
-
 .page-header{
 color:#ffff;
 background-color:#A067AB;
