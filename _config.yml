@@ -1,5 +1,6 @@
 name: aishi
 title: null
+background-color: #15191C
 
 #html { 
 #  background: url(https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png) no-repeat center center fixed; 
@@ -19,3 +20,4 @@ title: null
 #background-position: center
 #background-repeat: no-repeat
 #background-size: cover
+
