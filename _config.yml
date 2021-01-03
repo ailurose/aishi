@@ -19,3 +19,5 @@ background-image: url(https://user-images.githubusercontent.com/67992204/1034727
 background-position: center
 background-repeat: no-repeat
 background-size: cover
+
+theme: jekyll-theme-hacker
