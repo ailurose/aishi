@@ -1,17 +1,8 @@
 name: aishi
 title: null
-
-plugins:
-  - jekyll-feed
-  - jekyll-assets
-  - jekyll-minifier
-  - jekyll-sitemap
-  - jekyll-seo-tag
-  - jekyll-redirect-from
-  - jekyll-archives
   
 defaults:
   -  scope: 
       path: ""
     values: 
-     image: "https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png
+     image: "https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png"
