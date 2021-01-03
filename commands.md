@@ -1,7 +1,7 @@
 Aishi comes with the following commands and respective help commands to assist in its usage:
 
-# Granblue Fantasy
-## `~raid`
+## Granblue Fantasy
+### `~raid`
 
 
-# League
+## League
