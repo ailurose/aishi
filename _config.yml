@@ -2,6 +2,10 @@ name: aishi
 title: null
 background-color: #15191C
 
+echo '' >> _config.yml
+echo 'title: aishi' >> _config.yml
+echo 'description: aishi discord bot' >> _config.yml
+
 #html { 
 #  background: url(https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png) no-repeat center center fixed; 
 #  -webkit-background-size: cover;
