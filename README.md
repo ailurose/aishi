@@ -5,5 +5,5 @@ We provide stats and other various features to provide convenience right where y
 
 [![Foo](https://user-images.githubusercontent.com/67992204/103472482-1cc5ff00-4d5c-11eb-87dc-13ff2f14ecb7.png)](https://discord.com/api/oauth2/authorize?client_id=779087668897775617&permissions=268953665&scope=bot)
 
-![Aishi](https://user-images.githubusercontent.com/67992204/103488990-ff864480-4dde-11eb-998b-e11fee0d33ee.png){:height="50%" width="50%"}
+![Aishi](https://user-images.githubusercontent.com/67992204/103488990-ff864480-4dde-11eb-998b-e11fee0d33ee.png)
 
