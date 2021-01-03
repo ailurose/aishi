@@ -15,9 +15,7 @@ title: null
 #    values:
 #      image: https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png) no-repeat center center fixed
 
-background-image: url(https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png)
-background-position: center
-background-repeat: no-repeat
-background-size: cover
-
-theme: jekyll-theme-midnight
+#background-image: url(https://user-images.githubusercontent.com/67992204/103472771-72e87180-4d5f-11eb-91aa-40373655df44.png)
+#background-position: center
+#background-repeat: no-repeat
+#background-size: cover
