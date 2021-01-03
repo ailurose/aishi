@@ -17,7 +17,7 @@ Aishi comes with the following commands and respective help commands to assist i
 
 ## **League**
 ### Commands
-|Command|Description            |Usages                |
-|-------|:---------------------:|:---------------------|
-|`~ammr`|lists summoner ARAM MMR|`~ammr [user] [region]|
-|`~aram`|
+|Command|Description                                                    |Usages                 |
+|-------|:-------------------------------------------------------------:|:----------------------|
+|`~ammr`|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
+|`~aram`|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user] [region]`|
