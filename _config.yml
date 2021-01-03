@@ -1,6 +1,15 @@
 name: aishi
 title: null
 
+plugins:
+  - jekyll-feed
+  - jekyll-assets
+  - jekyll-minifier
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-redirect-from
+  - jekyll-archives
+  
 defaults:
   -  scope: 
       path: ""
