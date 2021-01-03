@@ -2,11 +2,13 @@ Aishi comes with the following commands and respective help commands to assist i
 
 ## **Granblue Fantasy**
 ### Commands
+
 |Command        |Description                                                                     |Usages            |
 |---------------|:------------------------------------------------------------------------------:|:-----------------|
 |`~raid`        |sends the GBF raid tweet from specified twitter user                            |`~raid [user]`    |
 
 ### **Admin Commands**
+
 |Admin Command  |Description                                                                     |Usages            |
 |---------------|:------------------------------------------------------------------------------:|:-----------------|
 |`~@makeroles`  |creates all roles for raids to be reacted when `~@gbfroles` is called           |`~@makeroles`     |
@@ -17,6 +19,7 @@ Aishi comes with the following commands and respective help commands to assist i
 
 ## **League**
 ### Commands
+
 |Command|Description                                                    |Usages                 |
 |-------|:-------------------------------------------------------------:|:----------------------|
 |`~ammr`|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
