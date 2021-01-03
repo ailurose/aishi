@@ -1,6 +1,6 @@
 Aishi comes with the following commands and respective help commands to assist in its usage:
 
-## Granblue Fantasy
+## **Granblue Fantasy**
 ### Commands
 |Command        |Description                                                                     |Usages            |
 |---------------|:------------------------------------------------------------------------------:|:-----------------|
