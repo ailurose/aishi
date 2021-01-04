@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="![AishiLogo](https://user-images.githubusercontent.com/67992204/103492222-5a2b9a80-4df7-11eb-9728-2d78c969ee8c.png)"/>
-</p>
+![AishiLogo](https://user-images.githubusercontent.com/67992204/103492222-5a2b9a80-4df7-11eb-9728-2d78c969ee8c.png)
 
 ### Made with much love and care
 **Assistance for your gaming needs of popular games such as League and Granblue Fantasy to your community members!**
