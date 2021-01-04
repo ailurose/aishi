@@ -19,6 +19,8 @@ When `~raid` is called, the bot will send a message in the channel that includes
 |`~@deleteroles`|allows for the deletion of individual roles associated to raids                 |`~deleteroles`    |
 |`~@gbfroles`   |lists the created roles for raids and allows server members to join by reactingd|`~@gbfroles`      |
 
+#### `~@makeroles
+
 
 ## **League**
 ### Commands
@@ -31,6 +33,6 @@ When `~raid` is called, the bot will send a message in the channel that includes
 ## **Profile**
 ### Commands
 
-|Command|Description|Usages|
+|Command|Description                                                                          |Usages                                                         |
 |---|:---:|:---|
-|`~pfp` |
+|`~pfp` |provides the profile of the user with any game codes that have been added by the user|`~pfp [add <title> <description> | delete <title> | deleteall]`|
