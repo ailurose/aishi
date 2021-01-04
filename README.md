@@ -1,4 +1,4 @@
-![AishiLogo](https://user-images.githubusercontent.com/67992204/103492277-b68eba00-4df7-11eb-91aa-52ecd1cd15d8.png)
+![AishiLogo](https://user-images.githubusercontent.com/67992204/103492314-01a8cd00-4df8-11eb-81e4-5e0d6358e108.png)
 
 
 ### Made with much love and care
