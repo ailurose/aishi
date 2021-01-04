@@ -8,7 +8,7 @@ Aishi comes with the following commands and respective help commands to assist i
 |[`~raid`](https://ailurose.github.io/aishi/commands#raid)|sends the GBF raid tweet from specified twitter user|`~raid [user]`    |
 
 #### `~raid`
-When `~raid` is called, the bot will send a message in the channel that includes the most recent tweet by the specified user as well as a separate message including only the raid code for ease of copying.
+When `~raid` is called, the bot will send a message in the channel that includes the most recent tweet by the specified twitter username as well as a separate message including only the raid code for ease of copying.
 
 ### **Admin Commands**
 
