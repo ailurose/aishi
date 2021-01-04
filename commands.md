@@ -62,4 +62,4 @@ If the server wishes to no longer use the created roles for raids, the admin may
 
 |Command|Description                                                                          |Usages                                                         |
 |---|:---:|:---|
-|`~pfp` |provides the profile of the user with any game codes that have been added by the user|`~pfp [add <title> <description> | delete <title> | deleteall]`|
+|`~pfp` |provides the profile of the user with any game codes that have been added by the user|`~pfp`, `~pfp [user], `~pfp add [title] [description], `~pfp delete [title]`, `~pfp deleteall`|
