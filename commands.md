@@ -21,7 +21,7 @@ When `~raid` is called, the bot will send a message in the channel that includes
 
 #### `~@makeroles`
 Calling `~@makeroles` creates the set of roles recommended by Aishi for raids. In order to call for this command, the user must be the administrator. See table below for the roles created via this command and the corresponding raids it represents:
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Role|Raids|
+|Role|Raids|
 |---|:---|
 |M1 raids       |Tiamat Omega, Colossus Omega, Leviathan Omega, Yggdrasil Omega, Luminiera Omega, Celeste Omega                 |
 |M2 raids       |Shiva, Europa, Godsworn Alexiel, Grimnir, Metatron, Avatar                                                     |
@@ -42,6 +42,8 @@ If the server wishes to no longer use the created roles for raids, the admin may
 #### `~@gbfroles`
 `~@gbfroles` sends a message listing all the created roles for the raids and the corresponding raids to each role and allows each server member to join those roles by reacting to the corresponding emotes. `~@makeroles` **must** be called before `~@gbfroles` or else the server members will be unable to join the roles. See [`~makeroles`](https://ailurose.github.io/aishi/commands#makeroles) for the table listing all the roles and corresponding raids.
 
+
+
 ## **League**
 ### Commands
 
@@ -49,6 +51,8 @@ If the server wishes to no longer use the created roles for raids, the admin may
 |---|:---:|:---|
 |`~ammr`|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
 |`~aram`|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user] [region]`|
+
+
 
 ## **Profile**
 ### Commands
