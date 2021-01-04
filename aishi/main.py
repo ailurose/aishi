@@ -139,6 +139,12 @@ async def ammr(message):
   if message.author != bot.user:
     myEmbed = discord.Embed(title = "Aram MMR Help", description = '`~ammr <user> <region>` lists summoner ARAM MMR \n\n**regions**\n`na = north america`\n`euw = EU West`\n`eune = EU Nordic & East`\n\nnote: default region is na', color = color)
     await message.channel.send(embed = myEmbed)
+    
+@help.command()
+async def aram(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = "Aram Team MMR Help", description = '`~aram <user> lists ARAM MMR of each summoner in game with specified summoner', color = color)
+    await message.channel.send(embed = myEmbed)
 
 @help.command()
 async def pfp(message):
