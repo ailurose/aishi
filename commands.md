@@ -53,8 +53,9 @@ If the server wishes to no longer use the created roles for raids, the admin may
 |Command|Description                                                    |Usages                 |
 |---|:---:|:---|
 |`~ammr`|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
-|`~aram`|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user] [region]`|
+|`~aram`|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user]`|
 
+#### `~ammr`
 
 
 ## **Profile**
