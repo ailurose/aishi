@@ -26,7 +26,7 @@ reaction_message_id = None
 @bot.event
 async def on_ready():
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="~help"))
-  print("Shiro is cute")
+  print("The bot is online")
   print(discord.__version__)
 
 '''
@@ -114,21 +114,6 @@ async def remove_role(payload: discord.RawReactionActionEvent):
   member = guild.get_member(payload.user_id)
   role = discord.utils.get(guild.roles, name=role_name)
   await member.remove_roles(role)
-    
-'''
-easter egg commands
-'''
-@bot.command(name='aiwu')
-async def ailu_cuter(message):
-  aiwu_def = msg1()
-  if message.author != bot.user:
-    await message.channel.send(random.sample(aiwu_def, 1)[0])
-
-@bot.command(name='shiwo')
-async def shiro_cute(message):
-  shiro_def = msgs()
-  if message.author != bot.user:
-    await message.channel.send(random.sample(shiro_def, 1)[0])
 
 '''
 help commands
