@@ -80,3 +80,6 @@ Users may customize their profile by deleting specified information that was pre
 ###### Example 2: `~pfp delete "a very long title"` will delete the title named "a very long title" and its corresponding description from the user's profile
 ##### `~pfp deleteall`
 If users do not wish to have any of the customizations added to their profile anymore, the user may delete their customizations by calling this command.
+
+
+
