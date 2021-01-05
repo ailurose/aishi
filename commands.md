@@ -24,6 +24,7 @@ When `~raid` is called, the bot will send a message in the channel that includes
 
 #### `~@makeroles`
 Calling `~@makeroles` creates the set of roles recommended by Aishi for raids. In order to call for this command, the user must be the administrator. See table below for the roles created via this command and the corresponding raids it represents:
+
 |Role|Raids|
 |---|:---|
 |M1 raids       |Tiamat Omega, Colossus Omega, Leviathan Omega, Yggdrasil Omega, Luminiera Omega, Celeste Omega                 |
