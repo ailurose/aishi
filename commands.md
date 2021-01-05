@@ -52,15 +52,31 @@ If the server wishes to no longer use the created roles for raids, the admin may
 
 |Command|Description                                                    |Usages                 |
 |---|:---:|:---|
-|`~ammr`|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
-|`~aram`|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user]`|
+|[`~ammr`](https://ailurose.github.io/aishi/commands#ammr)|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
+|[`~aram`](https://ailurose.github.io/aishi/commands#aram)|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user]`|
 
 #### `~ammr`
+When `~ammr` is called by the server member, the bot will return the ARAM MMR of the specified summoner. Regions include na = North America, euw = EU West, eune = EU Nordic & East. Note that the default region is na.
 
+#### `~aram`
+When `~aram` is called by the server member, the bot will return the ARAM MMR of each summoner that is in game with the specified summoner. At the momment, this command only supports na region.
 
 ## **Profile**
 ### Commands
 
 |Command|Description                                                                          |Usages                                                         |
 |---|:---:|:---|
-|`~pfp` |provides the profile of the user with any game codes that have been added by the user|`~pfp`, `~pfp [user]`, `~pfp add [title] [description]`, `~pfp delete [title]`, `~pfp deleteall`|
+|`~pfp` |provides the profile of the user with any information that have been added by the user|`~pfp`, `~pfp [user]`, `~pfp add [title] [description]`, `~pfp delete [title]`, `~pfp deleteall`|
+
+#### `~pfp`
+`~pfp` provides the custom profile of the user. When only `~pfp` is called, it returns the profile of the server member who called the command. Otherwise, if `~pfp [user]` is called, the profile of the mentioned server member will be returned.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##### `~pfp add`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users may customize their profile by adding information to their profile with a title and description.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 1: `~pfp add title description` inserts the title as "title" and the description as "description"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 2: `~pfp add "a long title" "a very long description"` inserts the title as "a long title" and the description as "a very long description"
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##### `~pfp delete`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Users may customize their profile by deleting specified information that was previously added into their profile
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 1: `~pfp delete title` will delete the title named "title" and its corresponding description from the user's profile
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Example 2: `~pfp delete "a very long title"` will delete the title named "a very long title" and its corresponding description from the user's profile
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;##### `~pfp deleteall`
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;If users do not wish to have any of the customizations added to their profile anymore, the user may delete their customizations by calling this command.
