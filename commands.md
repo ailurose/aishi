@@ -50,7 +50,7 @@ If the server wishes to no longer use the created roles for raids, the admin may
 ## **League**
 ### Commands
 
-|Command|Description                                                    |Usages                 |
+|Command                                                  |Description                                                    |Usages                 |
 |---|:---:|:---|
 |[`~ammr`](https://ailurose.github.io/aishi/commands#ammr)|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
 |[`~aram`](https://ailurose.github.io/aishi/commands#aram)|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user]`|
@@ -66,7 +66,7 @@ When `~aram` is called by the server member, the bot will return the ARAM MMR of
 
 |Command|Description                                                                          |Usages                                                         |
 |---|:---:|:---|
-|`~pfp` |provides the profile of the user with any information that have been added by the user|`~pfp`, `~pfp [user]`, `~pfp add [title] [description]`, `~pfp delete [title]`, `~pfp deleteall`|
+|[`~pfp`](https://ailurose.github.io/aishi/commands#pfp)|provides the profile of the user with any information that have been added by the user|`~pfp`, `~pfp [user]`, [`~pfp add [title] [description]`](https://ailurose.github.io/aishi/commands#pfp-add), [`~pfp delete [title]`](https://ailurose.github.io/aishi/commands#pfp-delete, [`~pfp deleteall`](https://ailurose.github.io/aishi/commands#pfp-deleteall)|
 
 #### `~pfp`
 `~pfp` provides the custom profile of the user. When only `~pfp` is called, it returns the profile of the server member who called the command. Otherwise, if `~pfp [user]` is called, the profile of the mentioned server member will be returned.
