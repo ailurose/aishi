@@ -72,11 +72,11 @@ When `~aram` is called by the server member, the bot will return the ARAM MMR of
 `~pfp` provides the custom profile of the user. When only `~pfp` is called, it returns the profile of the server member who called the command. Otherwise, if `~pfp [user]` is called, the profile of the mentioned server member will be returned.
 ##### `~pfp add`
 Users may customize their profile by adding information to their profile with a title and description.
-Example 1: `~pfp add title description` inserts the title as "title" and the description as "description"
-Example 2: `~pfp add "a long title" "a very long description"` inserts the title as "a long title" and the description as "a very long description"
+###### Example 1: `~pfp add title description` inserts the title as "title" and the description as "description"
+###### Example 2: `~pfp add "a long title" "a very long description"` inserts the title as "a long title" and the description as "a very long description"
 ##### `~pfp delete`
 Users may customize their profile by deleting specified information that was previously added into their profile
-Example 1: `~pfp delete title` will delete the title named "title" and its corresponding description from the user's profile
-Example 2: `~pfp delete "a very long title"` will delete the title named "a very long title" and its corresponding description from the user's profile
+###### Example 1: `~pfp delete title` will delete the title named "title" and its corresponding description from the user's profile
+###### Example 2: `~pfp delete "a very long title"` will delete the title named "a very long title" and its corresponding description from the user's profile
 ##### `~pfp deleteall`
 If users do not wish to have any of the customizations added to their profile anymore, the user may delete their customizations by calling this command.
