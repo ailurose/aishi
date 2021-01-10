@@ -223,9 +223,6 @@ async def ammr(message, user='', region='na'):
   if user == '':
     myEmbed = discord.Embed(title = "", description = "No summoner input. Please input summoner name", color = color)
     await message.channel.send(embed = myEmbed)
-  elif user.lower() == 'glancelot':
-    myEmbed = discord.Embed(title = "", description = user + "'s mmr is: 42069", color = color)
-    await message.channel.send(embed = myEmbed)
   elif (message.author != bot.user):
     if region in regions:
       aram = mmr(user, 'ARAM', region)
