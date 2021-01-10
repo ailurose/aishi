@@ -20,18 +20,18 @@ intents.members = True
 bot = commands.Bot(command_prefix='~', help_command=None, intents=intents)
 regions = ['na','euw','eune']
 color = 0xffb7c5
-embed = discord.Embed(title = "", description = "", colour = color)
 reaction_message_id = None
 
 @bot.event
 async def on_ready():
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="~help"))
-  print("The bot is online")
+  print("Shiro is cute")
   print(discord.__version__)
 
 '''
 admin commands
 '''
+# granblue admin commands
 @bot.command(name = '@makeroles')
 @has_permissions(administrator=True)
 async def makeroles(message):
@@ -49,9 +49,109 @@ async def deleteroles(message, *, role_name):
 @has_permissions(administrator=True)
 async def addrole(message, *, role_name):
   await message.guild.create_role(name=role_name)
+    
+'''
+help commands
+'''
+@bot.group(invoke_without_command=True)
+async def help(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'Commands', description = 'Type `~help <command>` for more help eg. `~help ammr`', color = color)
+    myEmbed.add_field(name = 'Granblue', value = '`raid`\n`gbfroles`')
+    myEmbed.add_field(name = 'League', value = '`ammr`\n`aram`')
+    myEmbed.add_field(name = 'Profile', value = '`~pfp`')
+    myEmbed.set_footer(text="Type ~@help for mod commands")
+    await message.channel.send(embed = myEmbed)
 
-@bot.command(name = '@gbfroles')
-@has_permissions(administrator=True)
+@help.command()
+async def raid(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'GBF Raid', description = '`~raid <user>` sends the GBF raid tweet from specified twitter user', color = color)
+    await message.channel.send(embed = myEmbed)
+
+@help.command()
+async def ammr(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = "Aram MMR Help", description = '`~ammr <user> <region>` lists summoner ARAM MMR \n\n**regions**\n`na = north america`\n`euw = EU West`\n`eune = EU Nordic & East`\n\nnote: default region is na', color = color)
+    await message.channel.send(embed = myEmbed)
+
+@help.command()
+async def aram(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = "Aram Team MMR Help", description = '`~aram <user> lists ARAM MMR of each summoner in game with specified summoner', color = color)
+    await message.channel.send(embed = myEmbed)
+
+@help.command()
+async def pfp(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = "Profile Help", description = '`~pfp` provides the profile of the user with any information that have been added by the user', color = color)
+    myEmbed.add_field(name = '***Examples***', value = '`~pfp`\nshows your own profile card\n\n`~pfp @Teru#4584`\nshows Teru profile card\n\n`~pfp add title description`\nadds to your profile an element with the selected title and description\n\n`~pfp add "Are hammys cute?" "Yes, of course"`\nadds to your profile an element with the title being "Are hammys cute" and the description being "Yes, of course"\n\n`~pfp delete title`\ndeletes selected title from your profile card\n\n`~deleteall`\nclears your entire profile card')
+    myEmbed.add_field(name = '***Usages***', value = '`~pfp [add <title> <description> | delete <title> | deleteall]`')
+    await message.channel.send(embed = myEmbed)
+
+@help.command()
+async def gbfroles(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'GBF Roles', description = '`~@gbfroles` lists the created roles for raids and allows server members to join by reacting. Server members cannot join roles until `~@makeroles` command has been called by admin', color = color)
+    myEmbed.add_field(name = 'Related Commands', value = '`makeroles`\n`addrole`\n`deleteroles`')
+    await message.channel.send(embed = myEmbed)
+
+@bot.group(invoke_without_command = True, name = '@help')
+async def mod_help(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'Moderator Commands', description = 'Type `~@help <command> for more help eg. `~@help gbfroles', color = color)
+    myEmbed.add_field(name = 'Granblue', value = '`gbfroles`\n`makeroles`\n`addrole`\n`deleteroles`')
+    await message.channel.send(embed = myEmbed)
+
+@mod_help.command()
+async def makeroles(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'Make GBF Roles', description = '`~@makeroles` creates all roles for raids to be reacted when `~@gbfroles` is called', color = color)
+    myEmbed.add_field(name = 'Related Commands', value = '`gbfroles`\n`addrole`\n`deleteroles`')
+    await message.channel.send(embed = myEmbed)
+
+@mod_help.command()
+async def addrole(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'Add GBF Role', description = '`~@addrole <role>` allows for the creation of individual roles to be added for raids ', color = color)
+    myEmbed.add_field(name = 'Related Commands', value = '`gbfroles`\n`makeroles`\n`deleteroles`')
+    await message.channel.send(embed = myEmbed)
+
+@mod_help.command()
+async def deleteroles(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'Delete GBF Roles', description = '`~@deleteroles <role>` allows for the deletion of individual roles associated to raids', color = color)
+    myEmbed.add_field(name = 'Related Commands', value = '`gbfroles`\n`makeroles`\n`addrole`')
+    await message.channel.send(embed = myEmbed)
+
+'''
+granblue fantasy commands
+'''
+@bot.command()
+async def raid(message, user=''):
+  if user == '':
+    myEmbed = discord.Embed(title = "", description = "No twitter username input. Please input twitter username", color = color)
+    await message.channel.send(embed = myEmbed)
+  elif message.author != bot.user:
+    battleID, raidName, msg = twt(user)
+    checker = ':Battle ID\nI need backup!'
+    if checker in msg:
+      raid = raids()
+      for r in raid:
+        for types in raid[r]:
+          if raidName in types:
+            try:
+              ping = get(message.guild.roles, name = r)
+              await message.channel.send(ping.mention)
+            except AttributeError:
+              myEmbed = discord.Embed(title = "", description = "", color = color)
+      myEmbed = discord.Embed(title = "", description = msg, color = color)
+    else:
+      myEmbed = discord.Embed(title = "", description = 'There are no recent raid msgs from ' + user, color = color)
+    await message.channel.send(embed = myEmbed)
+    await message.channel.send(battleID)
+
+@bot.command(name = 'gbfroles')
 async def gbfRoles(message):
   myEmbed = discord.Embed(title = 'Granblue Roles', description = 'Granblue roles have been created! Members can now join roles by using reacting to emojis \n', color = color)
   raid = raids()
@@ -114,107 +214,6 @@ async def remove_role(payload: discord.RawReactionActionEvent):
   member = guild.get_member(payload.user_id)
   role = discord.utils.get(guild.roles, name=role_name)
   await member.remove_roles(role)
-
-'''
-help commands
-'''
-@bot.group(invoke_without_command=True)
-async def help(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'Commands', description = 'Type `~help <command>` for more help eg. `~help ammr`', color = color)
-    myEmbed.add_field(name = 'Granblue', value = '`raid`')
-    myEmbed.add_field(name = 'League', value = '`ammr`\n`aram`')
-    myEmbed.add_field(name = 'Profile', value = '`~pfp`')
-    myEmbed.set_footer(text="Type ~@help for mod commands")
-    await message.channel.send(embed = myEmbed)
-
-@help.command()
-async def raid(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'GBF Raid', description = '`~raid <user>` sends the GBF raid tweet from specified twitter user', color = color)
-    await message.channel.send(embed = myEmbed)
-
-@help.command()
-async def ammr(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = "Aram MMR Help", description = '`~ammr <user> <region>` lists summoner ARAM MMR \n\n**regions**\n`na = north america`\n`euw = EU West`\n`eune = EU Nordic & East`\n\nnote: default region is na', color = color)
-    await message.channel.send(embed = myEmbed)
-    
-@help.command()
-async def aram(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = "Aram Team MMR Help", description = '`~aram <user> lists ARAM MMR of each summoner in game with specified summoner', color = color)
-    await message.channel.send(embed = myEmbed)
-
-@help.command()
-async def pfp(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = "Profile Help", description = '`~pfp` provides the profile of the user with any game codes that have been added by the user', color = color)
-    myEmbed.add_field(name = '***Examples***', value = '`~pfp`\nshows your own profile card\n\n`~pfp @Teru#4584`\nshows Teru profile card\n\n`~pfp add title description`\nadds to your profile an element with the selected title and description\n\n`~pfp add "Are hammys cute?" "Yes, of course"`\nadds to your profile an element with the title being "Are hammys cute" and the description being "Yes, of course"\n\n`~pfp delete title`\ndeletes selected title from your profile card\n\n`~deleteall`\nclears your entire profile card')
-    myEmbed.add_field(name = '***Usages***', value = '`~pfp [add <title> <description> | delete <title> | deleteall]`')
-    await message.channel.send(embed = myEmbed)
-
-@bot.group(invoke_without_command = True, name = '@help')
-async def mod_help(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'Moderator Commands', description = 'Type `~@help <command> for more help eg. `~@help gbfroles', color = color)
-    myEmbed.add_field(name = 'Granblue', value = '`gbfroles`\n`makeroles`\n`addrole`\n`deleteroles`')
-    await message.channel.send(embed = myEmbed)
-
-@mod_help.command()
-async def gbfroles(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'GBF Roles', description = '`~@gbfroles` lists the created roles for raids and allows server members to join by reacting. Server members cannot join roles until `~@makeroles` command has been called', color = color)
-    myEmbed.add_field(name = 'Related Commands', value = '`makeroles`\n`addrole`\n`deleteroles`')
-    await message.channel.send(embed = myEmbed)
-
-@mod_help.command()
-async def makeroles(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'Make GBF Roles', description = '`~@makeroles` creates all roles for raids to be reacted when `~@gbfroles` is called', color = color)
-    myEmbed.add_field(name = 'Related Commands', value = '`gbfroles`\n`addrole`\n`deleteroles`')
-    await message.channel.send(embed = myEmbed)
-
-@mod_help.command()
-async def addrole(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'Add GBF Role', description = '`~@addrole <role>` allows for the creation of individual roles to be added for raids ', color = color)
-    myEmbed.add_field(name = 'Related Commands', value = '`gbfroles`\n`makeroles`\n`deleteroles`')
-    await message.channel.send(embed = myEmbed)
-
-@mod_help.command()
-async def deleteroles(message):
-  if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'Delete GBF Roles', description = '`~@deleteroles <role>` allows for the deletion of individual roles associated to raids', color = color)
-    myEmbed.add_field(name = 'Related Commands', value = '`gbfroles`\n`makeroles`\n`addrole`')
-    await message.channel.send(embed = myEmbed)
-
-'''
-granblue fantasy commands
-'''
-@bot.command()
-async def raid(message, user=''):
-  if user == '':
-    myEmbed = discord.Embed(title = "", description = "No twitter username input. Please input twitter username", color = color)
-    await message.channel.send(embed = myEmbed)
-  elif message.author != bot.user:
-    battleID, raidName, msg = twt(user)
-    checker = ':Battle ID\nI need backup!'
-    if checker in msg:
-      raid = raids()
-      for r in raid:
-        for types in raid[r]:
-          if raidName in types:
-            try:
-              ping = get(message.guild.roles, name = r)
-              await message.channel.send(ping.mention)
-            except AttributeError:
-              myEmbed = discord.Embed(title = "", description = "", color = color)
-      myEmbed = discord.Embed(title = "", description = msg, color = color)
-    else:
-      myEmbed = discord.Embed(title = "", description = 'There are no recent raid msgs from ' + user, color = color)
-    await message.channel.send(embed = myEmbed)
-    await message.channel.send(battleID)
 
 '''
 league commands
