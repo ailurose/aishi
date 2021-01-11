@@ -9,6 +9,7 @@ Aishi comes with the following commands and respective help commands to assist i
 |Command                                                 |Description                                         |Usages            |
 |---|:---:|:---|
 |[`~raid`](https://ailurose.github.io/aishi/commands#raid)|sends the GBF raid tweet from specified twitter user|`~raid [user]`    |
+|[`~@gbfroles`](https://ailurose.github.io/aishi/commands#gbfroles)      |lists the created roles for raids and allows server members to join by reacting|`~@gbfroles`      |
 
 ### **Admin Commands**
 
@@ -17,10 +18,12 @@ Aishi comes with the following commands and respective help commands to assist i
 |[`~@makeroles`](https://ailurose.github.io/aishi/commands#makeroles)    |creates all roles for raids to be reacted when `~@gbfroles` is called          |`~@makeroles`     |
 |[`~@addrole`](https://ailurose.github.io/aishi/commands#addrole)        |allows for the creation of individual roles to be added for raids              |`~@addrole [role]`|
 |[`~@deleteroles`](https://ailurose.github.io/aishi/commands#deleteroles)|allows for the deletion of individual roles associated to raids                |`~deleteroles`    |
-|[`~@gbfroles`](https://ailurose.github.io/aishi/commands#gbfroles)      |lists the created roles for raids and allows server members to join by reacting|`~@gbfroles`      |
 
 #### `~raid`
 When `~raid` is called, the bot will send a message in the channel that includes the most recent tweet by the specified twitter username as well as a separate message including only the raid code for ease of copying.
+
+#### `~gbfroles`
+`~gbfroles` sends a message listing all the created roles for the raids and the corresponding raids to each role and allows each server member to join those roles by reacting to the corresponding emotes. Only the administrator can call this command. `~@makeroles` **must** be called before `~gbfroles` or else the server members will be unable to join the roles. See [`~makeroles`](https://ailurose.github.io/aishi/commands#makeroles) for the table listing all the roles and corresponding raids.
 
 #### `~@makeroles`
 Calling `~@makeroles` creates the set of roles recommended by Aishi for raids. In order to call for this command, the user must be the administrator. See table below for the roles created via this command and the corresponding raids it represents:
@@ -42,9 +45,6 @@ If the server would like to create a new role to be added to the list of raids, 
 
 #### `~@deleteroles`
 If the server wishes to no longer use the created roles for raids, the admin may call the command `~@deleteroles` to delete all raid roles.
-
-#### `~@gbfroles`
-`~@gbfroles` sends a message listing all the created roles for the raids and the corresponding raids to each role and allows each server member to join those roles by reacting to the corresponding emotes. Only the administrator can call this command. `~@makeroles` **must** be called before `~@gbfroles` or else the server members will be unable to join the roles. See [`~makeroles`](https://ailurose.github.io/aishi/commands#makeroles) for the table listing all the roles and corresponding raids.
 
 
 
