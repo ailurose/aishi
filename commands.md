@@ -3,12 +3,27 @@
 
 Aishi comes with the following commands and respective help commands to assist in its usage:
 
+## **Genshin Impact**
+### Commands
+
+|Command                                                    |Description                                          |Usages|
+|---|:---:|:---|
+|[`~craft`](https://ailurose.github.io/aishi/commands#craft)|performs material calculations for your genshin needs|`~craft [blue/purple/gold] [green amount] [blue amount] [purple amount]`|
+
+#### `~craft`
+When `~craft` is called, the bot performs calculations to determine the amount of the specified material you want, based on the amount of materials you stated. The material calculates based on the background colors of each material, aka the item rarity.
+##### Example 1: `~craft blue 6` will print that you can make a total of 2 blue materials
+##### Example 2: `~craft gold 2 3` will print that you can make a total of 0 gold materials
+##### Example 3: `~craft purple 0 14 9` will print that you can make a total of 13 purple materials
+
+
+
 ## **Granblue Fantasy**
 ### Commands
 
-|Command                                                 |Description                                         |Usages            |
+|Command                                                                 |Description                                                                    |Usages            |
 |---|:---:|:---|
-|[`~raid`](https://ailurose.github.io/aishi/commands#raid)|sends the GBF raid tweet from specified twitter user|`~raid [user]`    |
+|[`~raid`](https://ailurose.github.io/aishi/commands#raid)               |sends the GBF raid tweet from specified twitter user                           |`~raid [user]`    |
 |[`~@gbfroles`](https://ailurose.github.io/aishi/commands#gbfroles)      |lists the created roles for raids and allows server members to join by reacting|`~@gbfroles`      |
 
 ### **Admin Commands**
@@ -54,7 +69,7 @@ If the server wishes to no longer use the created roles for raids, the admin may
 |Command                                                  |Description                                                    |Usages                 |
 |---|:---:|:---|
 |[`~ammr`](https://ailurose.github.io/aishi/commands#ammr)|lists summoner ARAM MMR                                        |`~ammr [user] [region]`|
-|[`~aram`](https://ailurose.github.io/aishi/commands#aram)|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user]`|
+|[`~aram`](https://ailurose.github.io/aishi/commands#aram)|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user]`         |
 
 #### `~ammr`
 When `~ammr` is called by the server member, the bot will return the ARAM MMR of the specified summoner. Regions include na = North America, euw = EU West, eune = EU Nordic & East. Note that the default region is na.
@@ -62,10 +77,12 @@ When `~ammr` is called by the server member, the bot will return the ARAM MMR of
 #### `~aram`
 When `~aram` is called by the server member, the bot will return the ARAM MMR of each summoner that is in game with the specified summoner. At the momment, this command only supports na region.
 
+
+
 ## **Profile**
 ### Commands
 
-|Command|Description                                                                          |Usages                                                         |
+|Command                                                |Description                                                                           |Usages                          |
 |---|:---:|:---|
 |[`~pfp`](https://ailurose.github.io/aishi/commands#pfp)|provides the profile of the user with any information that have been added by the user|`~pfp`, `~pfp [user]`, [`~pfp add [title] [description]`](https://ailurose.github.io/aishi/commands#pfp-add), [`~pfp delete [title]`](https://ailurose.github.io/aishi/commands#pfp-delete), [`~pfp deleteall`](https://ailurose.github.io/aishi/commands#pfp-deleteall)|
 
@@ -81,6 +98,19 @@ Users may customize their profile by deleting specified information that was pre
 ###### Example 2: `~pfp delete "a very long title"` will delete the title named "a very long title" and its corresponding description from the user's profile
 ##### `~pfp deleteall`
 If users do not wish to have any of the customizations added to their profile anymore, the user may delete their customizations by calling this command.
+
+
+
+## **Miscellaneous**
+### Commands
+
+|Command                                                  |Description                            |Usages|
+|---|:---:|:---|
+|[`~flip`](https://ailurose.github.io/aishi/commands#flip)|flips a coin and returns heads or tails|`~flip`|
+
+#### `~flip`
+`~flip` allows the user to flip a coin and will return heads or tails
+
 
 
 [Back to home page](https://ailurose.github.io/aishi/)
