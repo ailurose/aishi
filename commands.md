@@ -3,7 +3,7 @@
 
 Aishi comes with the following commands and respective help commands to assist in its usage:
 
-## ![AishiLogo](https://user-images.githubusercontent.com/67992204/103492314-01a8cd00-4df8-11eb-81e4-5e0d6358e108.png)
+## **Genshin Impact**
 ### Commands
 
 |Command                                                    |Description                                          |Usages|
