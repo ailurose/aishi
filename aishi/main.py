@@ -49,7 +49,7 @@ async def deleteroles(message, *, role_name):
 @has_permissions(administrator=True)
 async def addrole(message, *, role_name):
   await message.guild.create_role(name=role_name)
-    
+
 '''
 help commands
 '''
@@ -59,14 +59,16 @@ async def help(message):
     myEmbed = discord.Embed(title = 'Commands', description = 'Type `~help <command>` for more help eg. `~help ammr`', color = color)
     myEmbed.add_field(name = 'Granblue', value = '`raid`\n`gbfroles`')
     myEmbed.add_field(name = 'League', value = '`ammr`\n`aram`')
-    myEmbed.add_field(name = 'Profile', value = '`~pfp`')
+    myEmbed.add_field(name = 'Genshin', value = '`craft`')
+    myEmbed.add_field(name = 'Profile', value = '`pfp`')
+    myEmbed.add_field(name = 'Miscellaneous', value = '`flip`')
     myEmbed.set_footer(text="Type ~@help for mod commands")
     await message.channel.send(embed = myEmbed)
 
 @help.command()
 async def raid(message):
   if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'GBF Raid', description = '`~raid <user>` sends the GBF raid tweet from specified twitter user', color = color)
+    myEmbed = discord.Embed(title = 'GBF Raid Help', description = '`~raid <user>` sends the GBF raid tweet from specified twitter user', color = color)
     await message.channel.send(embed = myEmbed)
 
 @help.command()
@@ -82,6 +84,20 @@ async def aram(message):
     await message.channel.send(embed = myEmbed)
 
 @help.command()
+async def gbfroles(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'GBF Roles Help', description = '`~@gbfroles` lists the created roles for raids and allows server members to join by reacting. Server members cannot join roles until `~@makeroles` command has been called by admin', color = color)
+    myEmbed.add_field(name = 'Related Commands', value = '`makeroles`\n`addrole`\n`deleteroles`')
+    await message.channel.send(embed = myEmbed)
+
+@help.command()
+async def craft(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = 'Genshin Craft Help', description = '`~craft <blue | purple | gold> <green amount> <blue amount> <purple amount>` performs material calculations for your genshin needs. Input in the material you need and the bot will state how much total you will have if you synthesized all your materials toward that material. Colors are based on the background color of the item.', color = color)
+    myEmbed.add_field(name = '***Examples***', value = '`~craft blue 6`\nWith your materials, you can make a total of 2 blue materials\n\n`~craft gold 2 3`\nWith your materials, you can make a total of 0 gold materials\n\n`~craft purple 0 14 9`\nWith your materials, you can make a total of 13 purple materials')
+    await message.channel.send(embed = myEmbed)
+
+@help.command()
 async def pfp(message):
   if message.author != bot.user:
     myEmbed = discord.Embed(title = "Profile Help", description = '`~pfp` provides the profile of the user with any information that have been added by the user', color = color)
@@ -90,10 +106,9 @@ async def pfp(message):
     await message.channel.send(embed = myEmbed)
 
 @help.command()
-async def gbfroles(message):
+async def flip(message):
   if message.author != bot.user:
-    myEmbed = discord.Embed(title = 'GBF Roles', description = '`~@gbfroles` lists the created roles for raids and allows server members to join by reacting. Server members cannot join roles until `~@makeroles` command has been called by admin', color = color)
-    myEmbed.add_field(name = 'Related Commands', value = '`makeroles`\n`addrole`\n`deleteroles`')
+    myEmbed = discord.Embed(title = "Coin Flip Help", description = '`~flip` allows the user to flip a coin and will return heads or tails', color = color)
     await message.channel.send(embed = myEmbed)
 
 @bot.group(invoke_without_command = True, name = '@help')
@@ -223,6 +238,9 @@ async def ammr(message, user='', region='na'):
   if user == '':
     myEmbed = discord.Embed(title = "", description = "No summoner input. Please input summoner name", color = color)
     await message.channel.send(embed = myEmbed)
+  elif user.lower() == 'glancelot':
+    myEmbed = discord.Embed(title = "", description = user + "'s mmr is: 42069", color = color)
+    await message.channel.send(embed = myEmbed)
   elif (message.author != bot.user):
     if region in regions:
       aram = mmr(user, 'ARAM', region)
@@ -258,6 +276,23 @@ async def aram(message, user, region='na'):
   else:
     myEmbed = discord.Embed(title = "", description = "There are no current ARAM games with " + user, color = color)      
   await message.channel.send(embed = myEmbed)
+
+'''
+genshin
+'''
+@bot.command()
+async def craft(message, want='', green='0', blue='0', purple='0'):
+  types = ['green', 'blue', 'purple', 'gold']
+  if want in types:
+    if want == 'gold':
+      amount = ((int(blue) + int(green)/3)/3 + int(purple))/3
+    elif want == 'purple':
+      amount = (int(blue) + int(green)/3)/3 + int(purple)
+    elif want == 'blue':
+      amount = int(green)/3 + int(blue)
+    myEmbed = discord.Embed(title = "", description = "With your materials, you can make a total of " + str(int(amount)) + ' ' + str(want) + " materials", color = color)
+  await message.channel.send(embed = myEmbed)
+  
 
 '''
 profile stuff
@@ -313,6 +348,14 @@ async def delete(message, game):
     myEmbed = discord.Embed(title = "", description = "The requested data was not cleared", color = color)
   await message.channel.send(embed = myEmbed)
 
+'''
+Other
+'''
+@bot.command()
+async def flip(message):
+  coin = ['heads', 'tails']
+  myEmbed = discord.Embed(title = "", description = "You got " + random.choice(coin), color=color)
+  await message.channel.send(embed = myEmbed)
 
 token = os.environ.get("DISCORD_BOT_SECRET")
 keep_alive()
