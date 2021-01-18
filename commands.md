@@ -8,7 +8,7 @@ Aishi comes with the following commands and respective help commands to assist i
 
 |Command                                                    |Description                                          |Usages|
 |---|:---:|:---|
-|[`~craft`](https://ailurose.github.io/aishi/commands#craft)|performs material calculations for your genshin needs|`~craft [blue/purple/gold] [green amount] [blue amount] [purple amount]`|
+|[`~craft`](https://ailurose.github.io/aishi/commands#craft)|performs material calculations|`~craft [blue/purple/gold] [green amount] [blue amount] [purple amount]`|
 
 #### `~craft`
 When `~craft` is called, the bot performs calculations to determine the amount of the specified material you want, based on the amount of materials you stated. The material calculates based on the background colors of each material, aka the item rarity.
