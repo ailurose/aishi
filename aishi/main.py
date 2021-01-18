@@ -291,7 +291,9 @@ async def craft(message, want='', green='0', blue='0', purple='0'):
     elif want == 'blue':
       amount = int(green)/3 + int(blue)
     myEmbed = discord.Embed(title = "", description = "With your materials, you can make a total of " + str(int(amount)) + ' ' + str(want) + " materials", color = color)
-  await message.channel.send(embed = myEmbed)
+    await message.channel.send(embed = myEmbed)
+  else:
+    await message.channel.send('Please enter a valid material type')
   
 
 '''
