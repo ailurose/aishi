@@ -17,7 +17,7 @@ When `~craft` is called, the bot performs calculations to determine the amount o
 ##### Example 3: `~craft purple 0 14 9` will print that you can make a total of 13 purple materials
 
 
-
+&nbsp;
 ## **Granblue Fantasy**
 ### Commands
 
@@ -62,7 +62,7 @@ If the server would like to create a new role to be added to the list of raids, 
 If the server wishes to no longer use the created roles for raids, the admin may call the command `~@deleteroles` to delete all raid roles.
 
 
-
+&nbsp;
 ## **League**
 ### Commands
 
@@ -78,7 +78,7 @@ When `~ammr` is called by the server member, the bot will return the ARAM MMR of
 When `~aram` is called by the server member, the bot will return the ARAM MMR of each summoner that is in game with the specified summoner. At the momment, this command only supports na region.
 
 
-
+&nbsp;
 ## **Profile**
 ### Commands
 
@@ -100,7 +100,7 @@ Users may customize their profile by deleting specified information that was pre
 If users do not wish to have any of the customizations added to their profile anymore, the user may delete their customizations by calling this command.
 
 
-
+&nbsp;
 ## **Miscellaneous**
 ### Commands
 
