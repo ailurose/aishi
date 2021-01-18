@@ -25,7 +25,7 @@ reaction_message_id = None
 @bot.event
 async def on_ready():
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="~help"))
-  print("Shiro is cute")
+  print("bot is online")
   print(discord.__version__)
 
 '''
