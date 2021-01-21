@@ -2,8 +2,8 @@
 
 
 Aishi comes with the following commands and respective help commands to assist in its usage:
-
-**Categories**: ([Genshin Impact](https://ailurose.github.io/aishi/commands#genshin-impact) | [Granblue Fantasy](https://ailurose.github.io/aishi/commands#granblue-fantasy) | [League](https://ailurose.github.io/aishi/commands#league) | [Profile](https://ailurose.github.io/aishi/commands#profile) | [Miscellaneous](https://ailurose.github.io/aishi/commands#miscellaneous))
+###**Categories**:
+[Genshin Impact](https://ailurose.github.io/aishi/commands#genshin-impact) | [Granblue Fantasy](https://ailurose.github.io/aishi/commands#granblue-fantasy) | [League](https://ailurose.github.io/aishi/commands#league) | [Profile](https://ailurose.github.io/aishi/commands#profile) | [Miscellaneous](https://ailurose.github.io/aishi/commands#miscellaneous)
 
 ## **Genshin Impact**
 ### Commands
