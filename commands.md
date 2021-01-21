@@ -1,7 +1,7 @@
 [![Foo](https://user-images.githubusercontent.com/67992204/103492314-01a8cd00-4df8-11eb-81e4-5e0d6358e108.png)](https://github.com/ailurose/aishi)
 
 
-Aishi comes with the following commands and respective help commands to assist in its usage:
+Aishi comes with the following commands and respective help commands to assist in its usage: 
 
 &nbsp;
 [Genshin Impact](https://ailurose.github.io/aishi/commands#genshin-impact) | [Granblue Fantasy](https://ailurose.github.io/aishi/commands#granblue-fantasy) | [League](https://ailurose.github.io/aishi/commands#league) | [Profile](https://ailurose.github.io/aishi/commands#profile) | [Miscellaneous](https://ailurose.github.io/aishi/commands#miscellaneous)
