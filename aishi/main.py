@@ -1,6 +1,8 @@
 import discord
 import os
 import random
+from itertools import cycle
+from discord.ext import tasks
 from discord.ext import commands
 from discord.ext.commands import has_permissions
 from discord.utils import get
@@ -16,17 +18,21 @@ from api import riot
 
 intents = discord.Intents.default()
 intents.members = True
-
 bot = commands.Bot(command_prefix='~', help_command=None, intents=intents)
+status = cycle(['~help', '~help'])
 regions = ['na','euw','eune']
 color = 0xffb7c5
 reaction_message_id = None
 
 @bot.event
 async def on_ready():
-  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name="~help"))
-  print("bot is online")
+  change_status.start()
+  print("Bot is online")
   print(discord.__version__)
+
+@tasks.loop(seconds = 10)
+async def change_status():
+  await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=next(status)))
 
 '''
 admin commands
