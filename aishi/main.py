@@ -265,8 +265,11 @@ async def ammr(message, user='', region='na'):
 
 @bot.command()
 async def aram(message, user, region='na'): 
-  teams = riot(user, 'ARAM', region)
-  if teams != 'error':
+  if teams == 'error':
+    myEmbed = discord.Embed(title = "", description = "There are no current ARAM games with " + user, color = color)
+  elif teams == 'unableToRetrieve':
+    myEmbed = discord.Embed(title = "", description = 'ARAM data is unable to be retrieved at this time... please try again later')
+  elif teams != 'error' and teams != 'unableToRetrieve':
     yourTeam = ''
     enemyTeam = ''
     teamsList = ['team1', 'team2']
@@ -281,9 +284,7 @@ async def aram(message, user, region='na'):
           enemyTeam = enemyTeam + '*' + players[0] + '*  :  ' + '\t\t\t' + str(players[1]) + '\n'
     myEmbed = discord.Embed(title = "ARAM mmr", description = "", color = color)
     myEmbed.add_field(name = "Your Team", value = yourTeam)
-    myEmbed.add_field(name = "Enemy Team", value = enemyTeam, inline = False)
-  else:
-    myEmbed = discord.Embed(title = "", description = "There are no current ARAM games with " + user, color = color)      
+    myEmbed.add_field(name = "Enemy Team", value = enemyTeam, inline = False)       
   await message.channel.send(embed = myEmbed)
 
 '''
