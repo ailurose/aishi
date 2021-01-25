@@ -87,18 +87,21 @@ def data(action, userid = '', data = ''):
       json.dump(info, fp)
 
 def riot(user, gametype, region = 'na'):
-  user1 = user.split(' ')
-  ulink = user1[0]
-  if len(user) > 1:
-    for u in range(len(user1)-1):
-      ulink = ulink + '%20' + user1[u+1]
-  url = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + ulink + '?api_key=' + str(os.environ.get('RIOT_KEY'))
-  response = requests.get(url)
-  summoner_api = response.json()
-  summoner = summoner_api['id']
-  url = 'https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/' + summoner + '?api_key=' + str(os.environ.get('RIOT_KEY'))
-  response = requests.get(url)
-  summoner_api = response.json()
+  try:
+    user1 = user.split(' ')
+    ulink = user1[0]
+    if len(user) > 1:
+      for u in range(len(user1)-1):
+        ulink = ulink + '%20' + user1[u+1]
+    url = 'https://na1.api.riotgames.com/lol/summoner/v4/summoners/by-name/' + ulink + '?api_key=' + str(os.environ.get('RIOT_KEY'))
+    response = requests.get(url)
+    summoner_api = response.json()
+    summoner = summoner_api['id']
+    url = 'https://na1.api.riotgames.com/lol/spectator/v4/active-games/by-summoner/' + summoner + '?api_key=' + str(os.environ.get('RIOT_KEY'))
+    response = requests.get(url)
+    summoner_api = response.json()
+  except:
+    return 'unableToRetrieve'
   try:
     players = summoner_api['participants']
     teams = {'team1':[], 'team2':[]}
