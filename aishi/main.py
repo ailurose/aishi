@@ -34,6 +34,12 @@ async def on_ready():
 async def change_status():
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=next(status)))
 
+@bot.event
+async def on_command_error(message, error):
+    error_msgs = ['Not a valid command', 'No such command, please try again', 'Invalid command; for command help, please use `~help`']
+    if isinstance(error, commands.CommandNotFound):
+     await message.channel.send(random.sample(error_msgs, 1)[0])
+
 '''
 admin commands
 '''
