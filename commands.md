@@ -107,13 +107,15 @@ If users do not wish to have any of the customizations added to their profile an
 ## **Miscellaneous**
 ### Commands
 
-|Command                                                  |Description                            |Usages|
+|Command                                                      |Description                            |Usages   |
 |---|:---:|:---|
-|[`~flip`](https://ailurose.github.io/aishi/commands#flip)|flips a coin and returns heads or tails|`~flip`|
+|[`~flip`](https://ailurose.github.io/aishi/commands#flip)    |flips a coin and returns heads or tails|`~flip`  |
+|[`~github`](https://ailurose.github.io/aishi/commands#github)|provides the github link of the bot    |`~github`|
 
 #### `~flip`
 `~flip` allows the user to flip a coin and will return heads or tails
 
-
+#### `~github`
+`~github` provides the github link of the bot, which is the site you are on right now!
 
 [Back to home page](https://ailurose.github.io/aishi/)
