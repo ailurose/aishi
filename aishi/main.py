@@ -313,26 +313,30 @@ profile stuff
 @bot.group(invoke_without_command=True)
 async def pfp(message, member = ''):
   mentionFormat = "<@"
-  print(member)
-  if member == '':
-    member = message.guild.get_member(message.author.id)
-    memberid = message.author.id
-  elif mentionFormat in member:
-    memberid = member.split(mentionFormat)[1].split('!')[1].split('>')[0]
-    member = message.guild.get_member(int(memberid))
+  if member.lower() == 'aishi':
+    myEmbed = discord.Embed(title = "", description = "You actually want to know about me? :pleading_face:", color = color)
+    myEmbed.set_author(name = "User Info = Aishi Bot")
+    myEmbed.set_footer(text = f"Requested by {message.author}", icon_url = message.author.avatar_url)
   else:
-    myEmbed = discord.Embed(title = "", description = "This user does not exist", color = color)
-    await message.send(embed = myEmbed)
-    return
-  myEmbed = discord.Embed(title = "", description = "", color = color)
-  myEmbed.set_author(name = f"User Info = {member}")
-  myEmbed.set_thumbnail(url = member.avatar_url)
-  myEmbed.set_footer(text = f"Requested by {message.author}", icon_url = message.author.avatar_url)
-  myEmbed.add_field(name = "Username:", value = member.display_name)
-  info = data('read', memberid)
-  if info != 'error':
-    for i in info['games']:
-      myEmbed.add_field(name = i.capitalize(), value = info['games'][i], inline=False)
+    if member == '':
+      member = message.guild.get_member(message.author.id)
+      memberid = message.author.id
+    elif mentionFormat in member:
+      memberid = member.split(mentionFormat)[1].split('!')[1].split('>')[0]
+      member = message.guild.get_member(int(memberid))
+    else:
+      myEmbed = discord.Embed(title = "", description = "This user does not exist", color = color)
+      await message.send(embed = myEmbed)
+      return
+    myEmbed = discord.Embed(title = "", description = "", color = color)
+    myEmbed.set_author(name = f"User Info = {member}")
+    myEmbed.set_thumbnail(url = member.avatar_url)
+    myEmbed.set_footer(text = f"Requested by {message.author}", icon_url = message.author.avatar_url)
+    myEmbed.add_field(name = "Username:", value = member.display_name)
+    info = data('read', memberid)
+    if info != 'error':
+      for i in info['games']:
+        myEmbed.add_field(name = i.capitalize(), value = info['games'][i], inline=False)
   await message.send(embed = myEmbed)
 
 @pfp.command()
