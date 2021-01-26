@@ -122,6 +122,12 @@ async def flip(message):
   if message.author != bot.user:
     myEmbed = discord.Embed(title = "Coin Flip Help", description = '`~flip` allows the user to flip a coin and will return heads or tails', color = color)
     await message.channel.send(embed = myEmbed)
+    
+@help.command()
+async def github(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = "Github Help", description = "`~github` provides a link directly to the github of the discord bot, containing the bot's invite link as well as a thorough list of the commands", color = color)
+    await message.channel.send(embed = myEmbed)
 
 @bot.group(invoke_without_command = True, name = '@help')
 async def mod_help(message):
@@ -371,6 +377,12 @@ Other
 async def flip(message):
   coin = ['heads', 'tails']
   myEmbed = discord.Embed(title = "", description = "You got " + random.choice(coin), color=color)
+  await message.channel.send(embed = myEmbed)
+  
+@bot.command()
+async def github(message):
+  githublink = 'https://ailurose.github.io/aishi/'
+  myEmbed = discord.Embed(title = "Github", description = "Thank you for being interested in our github!\n\nHere is the link, which contains the link to invite the bot to other servers: " + githublink, color = color)
   await message.channel.send(embed = myEmbed)
 
 token = os.environ.get("DISCORD_BOT_SECRET")
