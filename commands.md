@@ -118,4 +118,4 @@ If users do not wish to have any of the customizations added to their profile an
 #### `~github`
 `~github` provides the github link of the bot, which is the site you are on right now!
 
-[Back to home page](https://ailurose.github.io/aishi/)
+[Back to home page](https://ailurose.github.io/aishi/) 
