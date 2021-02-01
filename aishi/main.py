@@ -73,7 +73,7 @@ async def help(message):
     myEmbed.add_field(name = 'League', value = '`ammr`\n`aram`')
     myEmbed.add_field(name = 'Genshin', value = '`craft`')
     myEmbed.add_field(name = 'Profile', value = '`pfp`')
-    myEmbed.add_field(name = 'Miscellaneous', value = '`flip`')
+    myEmbed.add_field(name = 'Miscellaneous', value = '`flip`\n`github`\n`pick`\n`servers`')
     myEmbed.set_footer(text="Type ~@help for mod commands")
     await message.channel.send(embed = myEmbed)
 
@@ -128,12 +128,24 @@ async def github(message):
   if message.author != bot.user:
     myEmbed = discord.Embed(title = "Github Help", description = "`~github` provides a link directly to the github of the discord bot, containing the bot's invite link as well as a thorough list of the commands", color = color)
     await message.channel.send(embed = myEmbed)
+    
+@help.command()
+async def servers(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = "Servers Help", description = "`~servers` displays the number of servers that Aishi is on! I'm so happy to be providing love and care to these servers!", color = color)
+    await message.channel.send(embed = myEmbed)
+
+@help.command()
+async def pick(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title = "Pick Help", description = "`~pick` helps make a choice for you based on the choices you provide Aishi.")
+    myEmbed.add_field(name = '***Examples***', value = "`~pick potato | peach`\nselects between potato and peach\n\n`~pick dogs are cute | cats are cute | hammies are cute`\nselects between the phrases dogs are cute, cats are cute, and hammies are cute")
 
 @bot.group(invoke_without_command = True, name = '@help')
 async def mod_help(message):
   if message.author != bot.user:
     myEmbed = discord.Embed(title = 'Moderator Commands', description = 'Type `~@help <command> for more help eg. `~@help gbfroles', color = color)
-    myEmbed.add_field(name = 'Granblue', value = '`gbfroles`\n`makeroles`\n`addrole`\n`deleteroles`')
+    myEmbed.add_field(name = 'Granblue', value ='`makeroles`\n`addrole`\n`deleteroles`')
     await message.channel.send(embed = myEmbed)
 
 @mod_help.command()
@@ -383,6 +395,22 @@ async def flip(message):
 async def github(message):
   githublink = 'https://ailurose.github.io/aishi/'
   myEmbed = discord.Embed(title = "Github", description = "Thank you for being interested in our github!\n\nHere is the link, which contains the link to invite the bot to other servers: " + githublink, color = color)
+  await message.channel.send(embed = myEmbed)
+  
+@bot.command()
+async def pick(message, *, choices):
+  orSign = '|'
+  choiceSplit = choices.split('|')
+  if orSign in choices and len(choiceSplit) > 1:
+    selection = random.sample(choiceSplit, 1)[0]
+    myEmbed = discord.Embed(title = "", description = "Aishi picks " + selection.strip() + "!", color = color)
+  else:
+    myEmbed = discord.Embed(title = "", description = "**Please provide at least two items for me to pick!**\n`~pick peach | potato` will get me to pick between peach and potato!", color = color)
+  await message.channel.send(embed = myEmbed)
+
+@bot.command()
+async def servers(message):
+  myEmbed = discord.Embed(title = "", description = "Proudly giving love and care to " + str(len(bot.guilds)) + " servers! ❤️", color = color)
   await message.channel.send(embed = myEmbed)
 
 token = os.environ.get("DISCORD_BOT_SECRET")
