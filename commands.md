@@ -75,10 +75,10 @@ If the server wishes to no longer use the created roles for raids, the admin may
 |[`~aram`](https://ailurose.github.io/aishi/commands#aram)|lists ARAM MMR of each summoner in game with specified summoner|`~aram [user]`         |
 
 #### `~ammr`
-When `~ammr` is called by the server member, the bot will return the ARAM MMR of the specified summoner. Regions include na = North America, euw = EU West, eune = EU Nordic & East. Note that the default region is na.
+When `~ammr` is called by the server member, the bot will return an estimated ARAM MMR of the specified summoner through the use of [https://na.whatismymmr.com/](https://na.whatismymmr.com/). Regions include na = North America, euw = EU West, eune = EU Nordic & East. Note that the default region is na.
 
 #### `~aram`
-When `~aram` is called by the server member, the bot will return the ARAM MMR of each summoner that is in game with the specified summoner. At the momment, this command only supports na region.
+When `~aram` is called by the server member, the bot will return an estimated ARAM MMR of each summoner that is in game with the specified summoner through the use of [https://na.whatismymmr.com/](https://na.whatismymmr.com/). At the momment, this command only supports na region.
 
 
 &nbsp;
