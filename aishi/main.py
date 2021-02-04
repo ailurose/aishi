@@ -408,11 +408,6 @@ async def pick(message, *, choices):
     myEmbed = discord.Embed(title = "", description = "**Please provide at least two items for me to pick!**\n`~pick peach | potato` will get me to pick between peach and potato!", color = color)
   await message.channel.send(embed = myEmbed)
 
-@bot.command()
-async def servers(message):
-  myEmbed = discord.Embed(title = "", description = "Proudly giving love and care to " + str(len(bot.guilds)) + " servers! ❤️", color = color)
-  await message.channel.send(embed = myEmbed)
-
 token = os.environ.get("DISCORD_BOT_SECRET")
 keep_alive()
 bot.run(token)
