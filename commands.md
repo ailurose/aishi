@@ -112,7 +112,6 @@ If users do not wish to have any of the customizations added to their profile an
 |[`~flip`](https://ailurose.github.io/aishi/commands#flip)      |flips a coin and returns heads or tails   |`~flip`   |
 |[`~github`](https://ailurose.github.io/aishi/commands#github)  |provides the github link of the bot       |`~github` |
 |[`~pick`](https://ailurose.github.io/aishi/commands#pick)      |makes a choice for you                    |`~pick`   |
-|[`~servers`](https://ailurose.github.io/aishi/commands#servers)|displays the number of servers Aishi is on|`~servers`|
 
 #### `~flip`
 `~flip` allows the user to flip a coin and will return heads or tails
@@ -124,8 +123,5 @@ If users do not wish to have any of the customizations added to their profile an
 `~pick` helps make a choice for you based on the choices you provide Aishi
 ##### Example 1: `~pick potato | peach` selects between potato and peach
 ##### Example 2: `~pick dogs are cute | cats are cute | hammies are cute` selects between the phrases dogs are cute, cats are cute, and hammies are cute
-
-#### `~servers`
-`~servers` displays the number of servers that Aishi is currently in and providing her services
 
 [Back to home page](https://ailurose.github.io/aishi/) 
