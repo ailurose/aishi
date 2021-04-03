@@ -2,6 +2,9 @@ import requests
 import tweepy as tw
 import os
 import json
+import pymongo
+import dns
+from bson.objectid import ObjectId
 
 def mmr(user, mmr_type, region):
   url='https://' + region + '.whatismymmr.com/api/v1/summoner?name=' + user.replace(' ', '+')
@@ -37,54 +40,37 @@ def is_number(string):
     return False
 
 def data(action, userid = '', data = ''):
-  if action == 'create':
-    try:
-      with open('data.json', 'r') as fp:
-        info = json.load(fp)
-        for i in list(info):
-          if str(userid)==i:
-            if list(data.keys())[0] in list(info[i]['games']):
-              info[i]['games'][list(data.keys())[0]] = data[list(data.keys())[0]]
-            else:
-              info[i]['games'].update(data)
-            with open('data.json', 'w') as fp:
-              json.dump(info, fp)
-            return
-        with open('data.json', 'w') as fp:
-          dict = {str(userid): {'games': data}}
-          info.update(dict)
-          json.dump(info,fp)
-    except:
-      return 'error'
-  if action == 'read':
-    with open('data.json', 'r') as fp:
-      info = json.load(fp)
-      for i in list(info):
-        if str(userid) == i:
-          return info[i]
-      return 'error'
-  if action == 'delete':
-    with open('data.json', 'r') as fp:
-      info = json.load(fp)
-      for i in list(info):
-        if str(userid)==i:
-          for game in list(info[i]['games']):
-            if data == game:
-              print(info)
-              info[i]['games'].pop(data) 
-              print(info)
-    with open('data.json', 'w') as fp:
-      json.dump(info, fp)
-  if action == 'deleteall':
-    with open('data.json', 'r') as fp:
-      info = json.load(fp)
-      for i in list(info):
-        if str(userid)==i:
-          print(info)
-          info[i]['games'].clear()
-          print(info)
-    with open('data.json', 'w') as fp:
-      json.dump(info, fp)
+  # MONGODB
+  client = pymongo.MongoClient(str(os.environ.get("MONGODB")))
+  # The ismaster command is cheap and does not require auth.
+  client.admin.command('ismaster')
+  db = client.aishi
+  collection = db['aishicollect']
+  try:
+    if action == 'create' or action == 'delete':
+      if action == 'create':
+        info = {"_id": str(userid), 'labels': data}
+        try:
+          info["labels"].update(collection.find_one({"_id": str(userid)})["labels"])
+        except:
+          print()
+        collection.update_one({"_id": info["_id"]}, {"$set": {"labels": info["labels"]}}, upsert = True)   
+      elif action == 'delete':
+        info = collection.find_one({"_id": str(userid)})
+        info['labels'].pop(data)
+        collection.update_one({"_id": info["_id"]}, {"$set": {"labels": info["labels"]}}, upsert = True)
+    elif action == 'deleteall':
+      collection.remove({"_id": str(userid)})
+    elif action == 'read':
+      transfer()
+      info = collection.find_one({"_id": str(userid)})
+      if info is None:
+        return "error"
+      else:
+        return info
+  except:
+      print("error")
+      return "error"
 
 def riot(user, gametype, region = 'na'):
   try:
