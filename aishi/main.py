@@ -329,12 +329,15 @@ profile stuff
 '''
 
 @bot.group(invoke_without_command=True)
-async def pfp(message, member = ''):
+async def pfp(message, member=''):
   mentionFormat = "<@"
-  if member.lower() == 'aishi':
-    myEmbed = discord.Embed(title = "", description = "You actually want to know about me? :pleading_face:", color = color)
-    myEmbed.set_author(name = "User Info = Aishi Bot")
-    myEmbed.set_footer(text = f"Requested by {message.author}", icon_url = message.author.avatar_url)
+  if member.lower() == 'aishi' or (member != '' and member.split(mentionFormat)[1].split('!')[1].split('>')[0] == str(os.environ.get("BOT_ID"))):
+    myEmbed = discord.Embed(title="",
+                            description="You actually want to know about me? :pleading_face:", color=color)
+    myEmbed.set_author(name="User Info = Aishi Bot")
+    member = message.guild.get_member(int(os.environ.get("BOT_ID")))
+    myEmbed.set_thumbnail(url=member.avatar_url)
+    myEmbed.set_footer(text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
   else:
     if member == '':
       member = message.guild.get_member(message.author.id)
@@ -343,44 +346,56 @@ async def pfp(message, member = ''):
       memberid = member.split(mentionFormat)[1].split('!')[1].split('>')[0]
       member = message.guild.get_member(int(memberid))
     else:
-      myEmbed = discord.Embed(title = "", description = "This user does not exist", color = color)
-      await message.send(embed = myEmbed)
+      myEmbed = discord.Embed(title="",
+                              description="This user does not exist",color=color)
+      await message.send(embed=myEmbed)
       return
-    myEmbed = discord.Embed(title = "", description = "", color = color)
-    myEmbed.set_author(name = f"User Info = {member}")
-    myEmbed.set_thumbnail(url = member.avatar_url)
-    myEmbed.set_footer(text = f"Requested by {message.author}", icon_url = message.author.avatar_url)
-    myEmbed.add_field(name = "Username:", value = member.display_name)
+
+    myEmbed = discord.Embed(title="", description="", color=color)
+    myEmbed.set_author(name=f"User Info = {member}")
+    myEmbed.set_thumbnail(url=member.avatar_url)
+    myEmbed.set_footer(text=f"Requested by {message.author}", icon_url=message.author.avatar_url)
+    myEmbed.add_field(name="Username:", value=member.display_name)
     info = data('read', memberid)
     if info != 'error':
-      for i in info['games']:
-        myEmbed.add_field(name = i.capitalize(), value = info['games'][i], inline=False)
-  await message.send(embed = myEmbed)
+      for i in info['labels']:
+        myEmbed.add_field(name=i.capitalize(), value=info['labels'][i], inline=False)
+  await message.send(embed=myEmbed)
 
 @pfp.command()
-async def add(message, game, code):
+async def add(message, game='', code=''):
   gameCode = {game.lower(): code}
   info = data('create', message.author.id, gameCode)
   if info != 'error':
-    myEmbed = discord.Embed(title = "", description = "Your game code has been added to your profile", color = color)
+    myEmbed = discord.Embed(title = "", description = "Your data has been added to your profile", color = color)
   else:
-    myEmbed = discord.Embed(title = "", description = "Your game code was not added to your profile", color = color)
-  await message.channel.send(embed = myEmbed)
-
-@pfp.command()
-async def deleteall(message):
-  data('deleteall', message.author.id)
-  myEmbed = discord.Embed(title = "", description = "Your profile data has been cleared", color = color)
+    myEmbed = discord.Embed(title = "", description = "Your data was not added to your profile", color = color)
   await message.channel.send(embed = myEmbed)
 
 @pfp.command()
 async def delete(message, game):
-  info = data('delete', message.author.id, game.lower())
+	info = data('delete', message.author.id, game.lower())
+	if info != 'error':
+		myEmbed = discord.Embed(
+		    title="",
+		    description="The requested data has been cleared",
+		    color=color)
+	else:
+		myEmbed = discord.Embed(
+		    title="",
+		    description="The requested data was not cleared",
+		    color=color)
+	await message.channel.send(embed=myEmbed)
+
+
+@pfp.command()
+async def deleteall(message):
+  info = data('deleteall', message.author.id)
   if info != 'error':
-    myEmbed = discord.Embed(title = "", description = "The requested data has been cleared", color = color)
+    myEmbed = discord.Embed(title="", description="Your profile data has been cleared", color=color)
   else:
-    myEmbed = discord.Embed(title = "", description = "The requested data was not cleared", color = color)
-  await message.channel.send(embed = myEmbed)
+    myEmbed = discord.Embed(title="", description="Your profile data couldn't be cleared. Please try again.", color=color)
+  await message.channel.send(embed=myEmbed)
 
 '''
 Other
