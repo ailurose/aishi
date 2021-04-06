@@ -7,8 +7,6 @@ from discord.ext import commands
 from discord.ext.commands import has_permissions
 from discord.utils import get
 import asyncio
-from messages import msgs
-from messages import msg1
 from keep_alive import keep_alive
 from raids import raids
 from raids import roles
