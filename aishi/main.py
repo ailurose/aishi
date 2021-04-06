@@ -34,6 +34,19 @@ async def on_ready():
 async def change_status():
   await bot.change_presence(activity=discord.Activity(type=discord.ActivityType.listening, name=next(status)))
 
+@tasks.loop(seconds=10)
+async def checkegg():
+  info = twt('egg', 'newegg')
+  if info is not None:
+    memberids = data('egg', 'read')
+    if memberids != 'error':
+      for memberid in memberids:
+        for guild in bot.guilds:
+          for member in guild.members:
+            if member.id == int(memberid):
+              myEmbed = discord.Embed(title = "NewEgg Shuffle", description = info, color = color)
+              await member.send(embed=myEmbed)
+
 @bot.event
 async def on_command_error(message, error):
     error_msgs = ['Not a valid command', 'No such command, please try again', 'Invalid command; for command help, please use `~help`']
@@ -128,6 +141,12 @@ async def github(message):
   if message.author != bot.user:
     myEmbed = discord.Embed(title = "Github Help", description = "`~github` provides a link directly to the github of the discord bot, containing the bot's invite link as well as a thorough list of the commands", color = color)
     await message.channel.send(embed = myEmbed)
+	
+@help.command()
+async def shuffleegg(message):
+  if message.author != bot.user:
+    myEmbed = discord.Embed(title="Newegg Shuffle Help", description="`~shuffleegg` is a notification free subscription system in which allows those who subscribes to be notified whenever newegg tweets about the next eggshuffle", color = color)
+    await message.channel.send(embed=myEmbed)
     
 @help.command()
 async def servers(message):
@@ -422,6 +441,48 @@ async def pick(message, *, choices):
   else:
     myEmbed = discord.Embed(title = "", description = "**Please provide at least two items for me to pick!**\n`~pick peach | potato` will get me to pick between peach and potato!", color = color)
   await message.channel.send(embed = myEmbed)
+	
+@bot.command()
+async def servers(message):
+	myEmbed = discord.Embed(title="",
+	                        description="Proudly providing love and care to " +
+	                        str(len(bot.guilds)) + " servers! ❤️",
+	                        color=color)
+	await message.channel.send(embed=myEmbed)
+	
+@bot.command()
+async def shuffleegg(ctx):
+  myEmbed = discord.Embed(title = "Newegg Shuffle", description = "This command is to sign up for notification via DM anytime Newegg tweets about the next Newegg shuffle.", color = color)
+  myEmbed.add_field(name="Start", value="To confirm that you want to sign up for this, please type `start`")
+  myEmbed.add_field(name="Stop", value = "To stop getting Newegg Shuffle DMs, please type `stop`")
+  myEmbed.add_field(name="Exit", value="Otherwise, type anything else to exit this menu.")
+  await ctx.channel.send(embed=myEmbed)
+
+  def check(m):
+    return m.content.lower() == 'start' or m.content.lower() == 'stop'
+
+  try:
+    msg = await bot.wait_for("message", timeout=10, check=check)
+  except asyncio.TimeoutError:
+    await ctx.channel.send("Newegg shuffle menu has timed out due to inactivity")
+  else:
+    member = ctx.guild.get_member(ctx.author.id)
+    memberid = ctx.author.id
+    if msg.content.lower() == 'start':
+      info = data('egg', 'create', memberid)
+      if info == 'done':
+        await member.send("You are already subscribbed to the Newegg shuffle notification system. Aishi will do her best to continue her services to you.")
+      elif info != 'error':
+        await member.send("Thank you for subscribing to the Newegg shuffle notification system. Aishi make sure to send you the most recent shuffle whenever it is tweeted out!")
+      else:
+        await member.send("Sorry, Aishi cannot put you on the notification list at this time... please try again later!")
+    elif msg.content.lower() == 'stop':
+      info = data('egg', 'deleteall', memberid)
+      if info != 'error':
+        await member.send("I'm sorry to hear that you no longer want to receive Aishi's shuffle notifications. You are no longer a part of the notification list now")
+      else:
+        await member.send("Sorry, Aishi cannot unsubscribe you from the notification system at this time... please try again later!")
+    await msg.delete()
 
 token = os.environ.get("DISCORD_BOT_SECRET")
 keep_alive()
