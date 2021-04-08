@@ -132,4 +132,4 @@ If users do not wish to have any of the customizations added to their profile an
 #### `~shuffleegg`
 `~shuffleegg` is a notification free subscription system in which allows those who subscribes to be notified whenever newegg tweets about the next shuffle. You can start or stop subscription through this menu.
 
-[Back to home page](https://ailurose.github.io/aishi/) 
+[Back to home page](https://ailurose.github.io/aishi/)  
