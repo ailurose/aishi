@@ -107,12 +107,13 @@ If users do not wish to have any of the customizations added to their profile an
 ## **Miscellaneous**
 ### Commands
 
-|Command                                                      |Description                            |Usages   |
+|Command                                                              |Description                               |Usages       |
 |---|:---:|:---|
-|[`~flip`](https://ailurose.github.io/aishi/commands#flip)      |flips a coin and returns heads or tails   |`~flip`   |
-|[`~github`](https://ailurose.github.io/aishi/commands#github)  |provides the github link of the bot       |`~github` |
-|[`~pick`](https://ailurose.github.io/aishi/commands#pick)      |makes a choice for you                    |`~pick`   |
-|[`~servers`](https://ailurose.github.io/aishi/commands#servers)|displays the amount of servers Aishi is in|`~servers`|
+|[`~flip`](https://ailurose.github.io/aishi/commands#flip)            |flips a coin and returns heads or tails   |`~flip`      |
+|[`~github`](https://ailurose.github.io/aishi/commands#github)        |provides the github link of the bot       |`~github`    |
+|[`~pick`](https://ailurose.github.io/aishi/commands#pick)            |makes a choice for you                    |`~pick`      |
+|[`~servers`](https://ailurose.github.io/aishi/commands#servers)      |displays the amount of servers Aishi is in|`~servers`   |
+|[`~shuffleegg`](https://ailurose.github.io/aishi/commands#shuffleegg)|newegg shuffle notification system        |`~shuffleegg`|
 
 #### `~flip`
 `~flip` allows the user to flip a coin and will return heads or tails
@@ -127,5 +128,8 @@ If users do not wish to have any of the customizations added to their profile an
 
 #### `~servers`
 `~servers` displays the number of servers that Aishi is on and proudly giving service to!
+
+#### `~shuffleegg`
+`~shuffleegg` is a notification free subscription system in which allows those who subscribes to be notified whenever newegg tweets about the next shuffle. You can start or stop subscription through this menu.
 
 [Back to home page](https://ailurose.github.io/aishi/) 
