@@ -107,19 +107,23 @@ If users do not wish to have any of the customizations added to their profile an
 ## **Miscellaneous**
 ### Commands
 
-|Command                                                              |Description                               |Usages       |
+|Command                                                              |Description                               |Usages          |
 |---|:---:|:---|
-|[`~flip`](https://ailurose.github.io/aishi/commands#flip)            |flips a coin and returns heads or tails   |`~flip`      |
-|[`~github`](https://ailurose.github.io/aishi/commands#github)        |provides the github link of the bot       |`~github`    |
-|[`~pick`](https://ailurose.github.io/aishi/commands#pick)            |makes a choice for you                    |`~pick`      |
-|[`~servers`](https://ailurose.github.io/aishi/commands#servers)      |displays the amount of servers Aishi is in|`~servers`   |
-|[`~shuffleegg`](https://ailurose.github.io/aishi/commands#shuffleegg)|newegg shuffle notification system        |`~shuffleegg`|
+|[`~flip`](https://ailurose.github.io/aishi/commands#flip)            |flips a coin and returns heads or tails   |`~flip`         |
+|[`~github`](https://ailurose.github.io/aishi/commands#github)        |provides the github link of the bot       |`~github`       |
+|[`~petpet`](https://ailurose.github.io/aishi/commands#petpet)        |generates headpet                         |`~petpet [user]`|
+|[`~pick`](https://ailurose.github.io/aishi/commands#pick)            |makes a choice for you                    |`~pick`         |
+|[`~servers`](https://ailurose.github.io/aishi/commands#servers)      |displays the amount of servers Aishi is in|`~servers`      |
+|[`~shuffleegg`](https://ailurose.github.io/aishi/commands#shuffleegg)|newegg shuffle notification system        |`~shuffleegg`   |
 
 #### `~flip`
 `~flip` allows the user to flip a coin and will return heads or tails
 
 #### `~github`
 `~github` provides the github link of the bot, which is the site you are on right now!
+
+#### `~petpet`
+`~petpet` generates a headpetting meme using the profile picture of the person you mention
 
 #### `~pick`
 `~pick` helps make a choice for you based on the choices you provide Aishi
