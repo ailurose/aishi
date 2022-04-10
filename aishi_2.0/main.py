@@ -405,7 +405,7 @@ async def remind(ctx, action=''):
                     "Your reminders couldn't be cleared. Please try again.")
 
 extensions = [
-    'cogs.egg', 'cogs.genshin', 'cogs.help', 'cogs.league',
+    'cogs.genshin', 'cogs.help', 'cogs.league',
     'cogs.other', 'cogs.profile'
 ]
 if __name__ == "__main__":
