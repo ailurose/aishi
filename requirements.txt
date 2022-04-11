@@ -92,9 +92,7 @@ python-dateutil==2.8.2
 python-dotenv @ git+https://github.com/theskumar/python-dotenv
 python-jsonrpc-server==0.3.2
 python-language-server==0.31.10
-pyxel @ git+https://github.com/amasad/pyxel@8bcc2266b2fbb65f72ad686952de3838971c136e
-raid @ file:///home/runner/.cache/pypoetry/artifacts/ce/f0/33/4e6fd588f72b4081936ea3659daef3d8b3faf8a7b4ebf5b9d42fced3ac/raid-0.3.64-py3-none-any.whl
-referenceqvm==0.3
+pyxel @ git+https://github.com/kitao/pyxel
 regex==2021.8.28
 replit==3.2.4
 requests==2.26.0
@@ -109,23 +107,23 @@ six==1.16.0
 sounddevice==0.4.2
 SQLAlchemy==1.4.23
 sqlparse==0.4.2
-tasks @ file:///home/runner/.cache/pypoetry/artifacts/7c/07/dc/0f1e7c02db1858ac01a0adadaa9f31a6e55a456f94593a2b9809c51cdc/tasks-2.8.0-py3-none-any.whl
+tasks @ git+https://github.com/pb-/tasks
 tensorboard==2.2.2
 tensorboard-plugin-wit==1.8.0
-tensorflow-cpu @ https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow_cpu-2.2.0-cp38-cp38-manylinux2010_x86_64.whl
+tensorflow-cpu @ git+https://github.com/tensorflow/tensorflow
 tensorflow-estimator==2.2.0
 termcolor==1.1.0
 toml==0.10.2
 tomlkit==0.7.2
 tqdm==4.62.2
-tweepy @ file:///home/runner/.cache/pypoetry/artifacts/0a/90/97/250710dde3f35af0182d2f3707f5855f4d8bbbe7c765bef331de0305ae/tweepy-3.10.0-py2.py3-none-any.whl
-twitchio @ file:///home/runner/.cache/pypoetry/artifacts/b9/71/d6/c860a522d39cb528af5062ba2b7e328768a6d3fbcbd2b3673895b25c77/twitchio-2.1.5-py3-none-any.whl
-typing-extensions @ file:///home/runner/.cache/pypoetry/artifacts/fe/31/ef/8176395be3e4536aa430a84a1af3ade772047a9017c78ce2d045c1636b/typing_extensions-3.10.0.0-py3-none-any.whl
+tweepy @ git+https://github.com/tweepy/tweepy
+twitchio @ git+https://github.com/TwitchIO/TwitchIO
+typing-extensions @ git+https://github.com/python/typing/tree/master/typing_extensions
 ujson==1.35
 urllib3==1.26.6
 virtualenv==20.7.2
 webencodings==0.5.1
-Werkzeug @ file:///home/runner/.cache/pypoetry/artifacts/71/cb/8f/ea556c118c51e63201517bf1ce46027e851bef2077e67f333349deacf1/Werkzeug-1.0.1-py2.py3-none-any.whl
+Werkzeug @ git+https://github.com/pallets/werkzeug
 wrapt==1.12.1
 yapf==0.31.0
 yarg==0.1.9
