@@ -21,7 +21,6 @@ cs50==7.0.2
 cycler==0.10.0
 datadispatch @ git+https://github.com/pb-/datadispatch
 debugpy==1.2.1
-discord @ git+https://github.com/Rapptz/discord.py
 discord.py @ git+https://github.com/Rapptz/discord.py
 distlib==0.3.2
 dnspython @ git+https://github.com/rthalley/dnspython
