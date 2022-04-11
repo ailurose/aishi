@@ -21,13 +21,13 @@ cs50==7.0.2
 cycler==0.10.0
 datadispatch @ git+https://github.com/pb-/datadispatch
 debugpy==1.2.1
-discord @ file:///home/runner/.cache/pypoetry/artifacts/2a/dc/46/ea51f1b99fab3043473352404824cf8774020f4ef65ef7e8985e928ce3/discord-1.7.3-py3-none-any.whl
-discord.py @ file:///home/runner/.cache/pypoetry/artifacts/93/3d/7e/a71579025e378cc8608f84db0999aa01171575fc9bd9078988d8520a75/discord.py-1.7.3-py3-none-any.whl
+discord @ git+https://github.com/Rapptz/discord.py
+discord.py @ git+https://github.com/Rapptz/discord.py
 distlib==0.3.2
-dnspython @ file:///home/runner/.cache/pypoetry/artifacts/21/6b/47/ef4d2da2e3efaa0e9a8338689acf4c2fb05b726cc4774de873baa57265/dnspython-2.1.0-py3-none-any.whl
+dnspython @ git+https://github.com/rthalley/dnspython
 docopt==0.6.2
 filelock==3.0.12
-Flask @ file:///home/runner/.cache/pypoetry/artifacts/0b/5a/9e/38b1bab936ade7d1bccb7f5c39bdbe0215cb26c1d40260765099e5af4c/Flask-1.1.4-py2.py3-none-any.whl
+Flask @ git+https://github.com/pallets/flask
 funcsigs==1.0.2
 future==0.18.2
 gast==0.3.3
@@ -41,11 +41,11 @@ h5py==2.10.0
 html5lib==1.1
 idna==3.2
 importlib-metadata==3.10.1
-iso8601 @ file:///home/runner/.cache/pypoetry/artifacts/b5/e2/5e/cc024dd6173472a3858650275d77a6728b19126b2abda2a6723fa8c576/iso8601-1.0.2-py3-none-any.whl
-itsdangerous @ file:///home/runner/.cache/pypoetry/artifacts/ed/be/b7/3afa53339fde1838049443e48288a0348e1c636069b0c90f199510d48a/itsdangerous-1.1.0-py2.py3-none-any.whl
+iso8601 @ git+https://github.com/micktwomey/pyiso8601
+itsdangerous @ git+https://github.com/pallets/itsdangerous
 jedi==0.15.2
 jeepney==0.7.1
-Jinja2 @ file:///home/runner/.cache/pypoetry/artifacts/1e/19/63/9b4675e143abad59de60e0e667815fd5e19dd0b28fc2815f9f957726d3/Jinja2-2.11.3-py2.py3-none-any.whl
+Jinja2 @ git+https://github.com/pallets/jinja
 joblib==1.0.1
 Keras-Preprocessing==1.1.2
 keyring==21.8.0
@@ -58,16 +58,16 @@ msgpack==1.0.2
 multidict==5.1.0
 nltk==3.6.2
 numpy==1.21.2
-nums-from-string @ file:///home/runner/.cache/pypoetry/artifacts/09/92/4b/79d086f0ac404ac22713786644aa631e5fb9912036c16c3ea06ea1200b/nums_from_string-0.1.2-py3-none-any.whl
+nums-from-string @ git+https://github.com/doubleBite/Numbers-from-String
 oauthlib==3.1.1
 opt-einsum==3.3.0
 packaging==20.9
 parso==0.5.2
 pastel==0.2.1
-pet-pet-gif @ file:///home/runner/.cache/pypoetry/artifacts/f2/53/f3/7207a5c74f121cedd93836123162f14498e48622f789efb36b57757d12/pet_pet_gif-1.0.1-py3-none-any.whl
+pet-pet-gif @ git+https://github.com/camprevail/pet-pet-gif
 pexpect==4.8.0
-Pillow @ file:///home/runner/.cache/pypoetry/artifacts/6e/aa/d9/7ded3b81f9a6e15e60767687a0c842621ad9582ec9a548ba8e3bd96ae6/Pillow-8.3.1-cp38-cp38-manylinux_2_5_x86_64.manylinux1_x86_64.whl
-pipreqs @ file:///home/runner/.cache/pypoetry/artifacts/2c/e6/0f/9585a8ef61fcd5dac926f3d1eed481f8b3d948df0db41a6d6cbd58f029/pipreqs-0.4.11-py2.py3-none-any.whl
+Pillow @ git+https://github.com/python-pillow/Pillow
+pipreqs @ git+https://github.com/bndr/pipreqs
 pipreqs-amasad==0.4.10
 pkginfo==1.7.1
 platformdirs==2.3.0
@@ -76,20 +76,20 @@ poetry==1.1.6
 poetry-core==1.0.4
 protobuf==3.17.3
 ptyprocess==0.7.0
-py-cord @ file:///home/runner/.cache/pypoetry/artifacts/c9/25/b4/3545b40a17f83473c3c9e532867775708d6003b37bb2e2bb1f27942861/py_cord-1.7.3-py3-none-any.whl
+py-cord @ git+https://github.com/Pycord-Development/pycord
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
 pyflakes==2.1.1
 pygame==2.0.1
 pylev==1.4.0
-pymongo @ file:///home/runner/.cache/pypoetry/artifacts/1e/68/56/bf2d05d81434474803e09d6e4e34201dd98298a6a17ccf353448c3a88b/pymongo-3.12.0-cp38-cp38-manylinux_2_17_x86_64.manylinux2014_x86_64.whl
+pymongo @ git+https://github.com/mongodb/mongo-python-driver
 PyOpenGL==3.1.5
 pyparsing==2.4.7
 pyquil==1.9.0
-PySocks @ file:///home/runner/.cache/pypoetry/artifacts/0d/f3/af/0d5cb110c7ceb17f08017e9fbc5a2e1770cefa6179d7f05b25aaf8ffb2/PySocks-1.7.1-py3-none-any.whl
+PySocks @ git+https://github.com/Anorov/PySocks
 python-dateutil==2.8.2
-python-dotenv @ file:///home/runner/.cache/pypoetry/artifacts/bf/e2/32/a8162049eb27a891919d21d76446fd01711014b43c809ceef66925e85b/python_dotenv-0.15.0-py2.py3-none-any.whl
+python-dotenv @ git+https://github.com/theskumar/python-dotenv
 python-jsonrpc-server==0.3.2
 python-language-server==0.31.10
 pyxel @ git+https://github.com/amasad/pyxel@8bcc2266b2fbb65f72ad686952de3838971c136e
