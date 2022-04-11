@@ -93,7 +93,7 @@ python-language-server==0.31.10
 pyxel @ git+https://github.com/kitao/pyxel
 regex==2021.8.28
 replit==3.2.4
-requests==2.26.0
+requests @ git+https://github.com/psf/requests
 requests-oauthlib==1.3.0
 requests-toolbelt==0.9.1
 rope==0.18.0
