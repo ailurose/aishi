@@ -11,7 +11,7 @@ cachy==0.3.0
 certifi==2021.5.30
 cffi==1.14.6
 chardet==4.0.0
-charset-normalizer @ file:///home/runner/.cache/pypoetry/artifacts/af/21/e0/394eca0bc176bd50fe9d57eb9c7e664887e6f89c5dd99d1bfbe92742e3/charset_normalizer-2.0.3-py3-none-any.whl
+charset-normalizer @ https://github.com/ousret/charset_normalizer
 cleo==0.8.1
 click @ file:///home/runner/.cache/pypoetry/artifacts/30/bc/bf/e00ffd8f0edf0294942e70e80e42a839bd2649d2c5b864e6389e526d2a/click-7.1.2-py2.py3-none-any.whl
 clikit==0.6.2
