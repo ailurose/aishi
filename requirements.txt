@@ -110,7 +110,6 @@ sqlparse==0.4.2
 tasks @ git+https://github.com/pb-/tasks
 tensorboard==2.2.2
 tensorboard-plugin-wit==1.8.0
-tensorflow-cpu @ git+https://github.com/tensorflow/tensorflow
 tensorflow-estimator==2.2.0
 termcolor==1.1.0
 toml==0.10.2
