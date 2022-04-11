@@ -114,7 +114,6 @@ tomlkit==0.7.2
 tqdm==4.62.2
 tweepy @ git+https://github.com/tweepy/tweepy
 twitchio @ git+https://github.com/TwitchIO/TwitchIO
-typing-extensions @ git+https://github.com/python/typing/tree/master/typing_extensions
 ujson==1.35
 urllib3==1.26.6
 virtualenv==20.7.2
