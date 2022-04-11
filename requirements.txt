@@ -58,7 +58,7 @@ multidict==5.1.0
 nltk==3.6.2
 numpy==1.21.2
 nums-from-string @ git+https://github.com/doubleBite/Numbers-from-String
-oauthlib==3.1.1
+oauthlib @ https://github.com/oauthlib/oauthlib
 opt-einsum==3.3.0
 packaging==20.9
 parso==0.5.2
